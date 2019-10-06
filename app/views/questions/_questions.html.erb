@@ -5,11 +5,11 @@
 		<div class="<% if @widget %>col-xs-4 col-sm-4 col-md-4 <% end %>col-lg-4 note note-container-question" style="margin-top:20px;">
       <div class="note-pane note-question<% if node.status == 4 %> moderated<% end %>">
 
-        <div class="header-icon"><i class="fa fa-question-circle"></i> <a href="/q/<%= node.id %>"><i class="fa fa-link"></i></a></div>
-
         <%= render partial: 'dashboard/node_moderate', locals: { node: node } %>
 
         <h4><a <% if @widget %>target="_blank"<% end %> href="<%= node.path(:question) %>"><%= node.title %></a></h4>
+     <div class="header-icon"><i class="fa fa-question-circle"></i> <a href="/q/<%= node.id %>"><i class="fa fa-link"></i></a></div>
+
 
         <span id="tags">
         <% node.tags.limit(4).each do |tag| %>
